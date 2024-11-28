@@ -1,3 +1,5 @@
+@import '../styles/mixins.scss';
+
 body {
   font-family: 'Roboto', serif;
   font-size: 14px;
@@ -33,8 +35,14 @@ li {
 }
 
 .container {
-  width: 1080px;
   margin: 0 auto;
+  width: 500px;
+  @include onDesktop {
+    width: 1020px;
+  }
+  @include onMobile {
+    width: 240px;
+  }
 }
 
 .character {
@@ -42,6 +50,8 @@ li {
 
   &__image {
     width: 240px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
   }
 
   &__name {
